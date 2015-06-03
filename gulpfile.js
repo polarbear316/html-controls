@@ -10,12 +10,12 @@ var fs = require('fs');
 
 gulp.task('ctrlsjs',function(){
 	return gulp.src(['src/*/ctrl.js'])
-		.pipe(sourcemaps.init())
+//		.pipe(sourcemaps.init())
   	    	.pipe(concat('ctrls.js'))
   	    .pipe(gulp.dest('build/'))
   	    	.pipe(rename("ctrls.min.js"))
   	    	.pipe(uglify())
-  	    .pipe(sourcemaps.write())
+//  	    .pipe(sourcemaps.write())
 		.pipe(gulp.dest('build/'));
 });
 
