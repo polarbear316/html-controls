@@ -1,0 +1,57 @@
+@defborder 1px solid #666;
+@defpadding 0px 5px 0px 5px;
+@defradius 6px;
+@leftround @defradius 0px 0px @defradius;
+@rightround 0px @defradius @defradius 0px;
+@topround @defradius @defradius 0px 0px;
+@bottomround 0px 0px @defradius @defradius;
+
+input-ctrl {
+	display:flex;
+}
+
+input-ctrl label {
+	flex:0 1 auto;
+	border:@defborder;
+	border-right:none;
+	border-radius:@leftround;
+	
+	background:#FFF;
+		
+	cursor:default;
+	
+	padding:@defpadding;
+}
+
+input-ctrl input {
+	flex:1 1 auto;
+	
+	border:@defborder;
+	border-radius:0px;
+		
+	padding:@defpadding;
+}
+
+input-ctrl:not([label]) input {
+  	border-top-left-radius: @defradius;
+  	border-bottom-left-radius: @defradius;
+}
+
+input-ctrl:not([btn]) input {
+  	border-top-right-radius: @defradius;
+  	border-bottom-right-radius: @defradius;
+}
+
+input-ctrl button {
+	flex:0 1 auto;
+	
+	border-radius:@rightround;
+	border:@defborder;
+	border-left:none;
+	
+	padding-left:10px;
+	padding-right:10px;
+	
+	cursor:pointer;
+	outline:none;
+}
