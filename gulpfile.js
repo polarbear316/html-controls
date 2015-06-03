@@ -28,7 +28,7 @@ gulp.task('ctrlstemplates',function(){
 gulp.task('ctrlscss',function(){
 	return gulp.src(['src/*/*.less'])
 			.pipe(less())
-			.pipe(rename("ctrls.css"))
+			.pipe(concat('ctrls.css'))
   	    	.pipe(minifyCSS())
   	    .pipe(gulp.dest('build/'));
 });

@@ -5,4 +5,14 @@
     <label></label><input type="text" /><button></button>
   </template>
 </dom-module>
+<dom-module id="list-ctrl">
+  <template>
+    <label>{{label}}</label>
+    <div class="list-input">
+    	<input type="text" placeholder="{{placeholder}}" />
+    	<div class="list-container"></div>
+    </div>
+    <button>{{btn}}</button>
+  </template>
+</dom-module>
 <script type="text/javascript" src="../build/ctrls.js"></script>

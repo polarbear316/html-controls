@@ -1,0 +1,119 @@
+@defborder: 1px solid #666;
+@defpadding: 0px 5px 0px 5px;
+@defradius: 6px;
+@leftround: @defradius 0px 0px @defradius;
+@rightround: 0px @defradius @defradius 0px;
+@topround: @defradius @defradius 0px 0px;
+@bottomround: 0px 0px @defradius @defradius;
+
+* {
+  box-sizing:border-box;
+}
+
+list-ctrl {
+  display: flex;
+  min-height: 30px;
+  
+  label {
+    flex:0 0 auto;
+    max-height:30px;
+    border:@defborder;
+    border-right:none;
+    border-radius:@leftround;
+    
+    line-height:28px;
+    
+    background:#FFF;
+      
+    cursor:default;
+    
+    padding:@defpadding;
+  }
+  
+  .list-input {
+    flex:1 1 auto;
+    min-height:30px;
+    input {
+      outline:none;
+      border:@defborder;
+      width:100%;
+      min-height:30px;
+    }
+  }
+  
+  button {
+    flex:0 0 auto;
+    max-height:30px;
+    border-radius:@rightround;
+    border:@defborder;
+    border-left:none;
+    
+    padding-left:10px;
+    padding-right:10px;
+    
+    cursor:pointer;
+    outline:none;
+  }
+}
+
+list-ctrl[type=list]{
+    input {
+      padding-left:4px;
+      padding-right:4px;
+    }
+    .list-container {
+      max-height:5000px;
+      transition:all 0.6s;
+      overflow:hidden;
+      .list-item {
+        display: block;
+        border: 1px solid #CCC;
+        border-top: none;
+        height: 24px;
+        line-height: 22px;
+        padding-left: 6px;
+        padding-right: 6px;
+        cursor:pointer;
+        .close {
+          float:right;
+          line-height:24px;
+          margin-right:3px;
+        }
+      }
+    }
+    .list-container:empty {
+      border:none;
+      max-height:0px;
+    }  
+}
+
+list-ctrl[type=pill]{
+  .list-container {
+    flex:1 1 auto;
+    border:@defborder;
+    min-height:30px;
+    transition:all 0.6s;
+    .list-item {
+      border: 1px solid #BBB;
+      border-radius: 4px;
+      margin-left: 4px;
+      margin-top: 2px;
+      padding: 2px 6px 2px 6px;
+      display: inline-block;   
+      cursor:pointer;
+      .close {
+        margin-left:5px;
+      }      
+    }
+    .input-span {
+      margin-left: 4px;
+      margin-right: 4px;
+      input {
+        display: inline;
+        width: 2px;
+        border: none;
+        outline: none;
+      }      
+    }
+  } 
+}
