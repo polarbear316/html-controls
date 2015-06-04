@@ -1,0 +1,70 @@
+@defborder: 1px solid #666;
+@defpadding: 0px 5px 0px 5px;
+@defradius: 6px;
+@leftround: @defradius 0px 0px @defradius;
+@rightround: 0px @defradius @defradius 0px;
+@topround: @defradius @defradius 0px 0px;
+@bottomround: 0px 0px @defradius @defradius;
+
+select-ctrl, select-ctrl * {
+  box-sizing:border-box;
+}
+select-ctrl {
+  display:flex;
+  height:30px;
+}
+
+select-ctrl label {
+  flex:0 0 auto;
+  line-height:28px;
+  border:@defborder;
+  border-right:none;
+  border-radius:@leftround;
+  
+  background:#FFF;
+    
+  cursor:default;
+  
+  padding:@defpadding;
+}
+
+select-ctrl > select {
+  flex:1 1 auto;
+  border:@defborder;
+  border-radius:@rightround;
+    
+  padding:@defpadding;
+}
+
+select-ctrl > .combo-box {
+  flex:1 1 auto;
+  position:relative;
+}
+
+select-ctrl > .combo-box input {
+  height:30px;
+  width:100%;
+  border:@defborder;
+  border-radius:@rightround;
+    
+  padding:@defpadding;
+}
+select-ctrl > .combo-box .options {
+  border:1px solid #999;
+  position:absolute;
+  top:30px;
+  left:0px;
+  width:100%;
+  max-height:400px;
+  
+  transition-property: all;
+  transition-duration: .5s;
+  transition-timing-function: ease-in;  
+  overflow-y:hidden;
+}
+
+select-ctrl > .combo-box input:not(:focus) ~ .options {
+  max-height:0px;
+  border:1px solid #FFF;
+  transition-duration: .2s;
+}
