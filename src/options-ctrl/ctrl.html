@@ -1,0 +1,13 @@
+<dom-module id="options-ctrl">
+  <template>
+    <label>{{label}}</label>
+    <div class="options-container">
+    	<content></content>
+    </div>
+  </template>
+</dom-module>
+<dom-module id="options-item">
+  <template>
+    <input name="{{name}}" value="{{value}}" type="checkbox" /><label><span class="check"></span><img src="{{icon}}" /><span class="label">{{label}}</span></label>
+  </template>
+</dom-module>
