@@ -214,8 +214,11 @@
 		is: "options-item",
 		created:function(){},
 		ready:function(){
-			this.$$("input").id = this.getAttribute("name").replace(/[^a-zA-Z0-9]/g,"") + parseInt(Math.random()*1000,10);
-			this.$$("label").setAttribute("for",this.$$("input").id);
+			var prefix = this.getAttribute("name").replace(/[^a-zA-Z0-9]/g,"");
+			var id = "";
+			while(document.querySelector(id=prefix+parseInt(Math.random()*1000,10)));
+			this.$$("input").id = id;
+			this.$$("label").setAttribute("for",id);
 			this.$$("input").setAttribute("type",this.getAttribute("type")||"checkbox");
 			this.$$("input").setAttribute("value",this.getAttribute("value"));
 			if(!this.hasAttribute("icon")){
@@ -223,8 +226,11 @@
 			}
 		}, 
 		factoryImpl:function(opt){
-			this.$$("input").id = opt.name.replace(/[^a-zA-Z0-9]/g,"") + parseInt(Math.random()*1000,10);
-			this.$$("label").setAttribute("for",this.$$("input").id);
+			var prefix = opt.name.replace(/[^a-zA-Z0-9]/g,"");
+			var id = "";
+			while(document.querySelector(id=prefix+parseInt(Math.random()*1000,10)));
+			this.$$("input").id = id;
+			this.$$("label").setAttribute("for",id);
 			this.$$("input").setAttribute("type",opt.type||"checkbox");
 			this.$$("input").setAttribute("value",opt.value);
 			this.$$("input").checked = opt.checked;
