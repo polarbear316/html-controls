@@ -268,10 +268,17 @@
 				this.select.remove();
 				this.input = this.$$("input");
 				this.input.addEventListener("input",this.filter.bind(this));
+				this.combo.querySelector(".options").addEventListener("click",this.optionClick.bind(this));
 			}
 		},
 		factoryImpl:function(val){
 			this.value = val;
+		},
+		optionClick:function(e){
+			var option = e.target;
+			console.log(option,option.tagName);
+			if(option.tagName != "OPTION") return;
+			this.value = option.value;
 		},
 		filter:function(e){
 			var val = e.target.value;
